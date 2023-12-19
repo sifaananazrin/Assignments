@@ -1,27 +1,25 @@
-// AdminLogin.js
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { FaLock } from 'react-icons/fa';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaLock } from "react-icons/fa";
 import axios from "../api/axios";
 
 function AdminLogin() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('/admin/adminlogin', { 
+      const response = await axios.post("/admin/adminlogin", {
         username,
-        password
+        password,
       });
-      console.log(response)
+      console.log(response);
       if (response.status === 200) {
-        navigate('/admin-home');
+        navigate("/admin-home");
       }
     } catch (error) {
-      alert('Login failed. Please check your credentials.');
+      alert("Login failed. Please check your credentials.");
     }
   };
 
@@ -31,9 +29,11 @@ function AdminLogin() {
         <h2 className="text-2xl font-bold text-white mb-4">
           <FaLock className="inline-block text-1xl" /> Admin Login
         </h2>
-        {/* Username Input */}
         <div className="mb-4">
-          <label htmlFor="username" className="block text-sm font-medium text-white">
+          <label
+            htmlFor="username"
+            className="block text-sm font-medium text-white"
+          >
             Username
           </label>
           <input
@@ -45,9 +45,11 @@ function AdminLogin() {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        {/* Password Input */}
         <div className="mb-6">
-          <label htmlFor="password" className="block text-sm font-medium text-white">
+          <label
+            htmlFor="password"
+            className="block text-sm font-medium text-white"
+          >
             Password
           </label>
           <input
@@ -59,7 +61,6 @@ function AdminLogin() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        {/* Login Button */}
         <button
           className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md"
           onClick={handleLogin}

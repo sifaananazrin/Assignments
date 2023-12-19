@@ -49,14 +49,13 @@ const SurveyForm = () => {
       const response = await axios.post("/api/submit-survey", values);
 
       if (response.data && response.data.message === 'Survey added successfully') {
-        navigate('/success-page'); // Navigate to success page
+        navigate('/success-page'); 
       } else {
        console.log("failed")
       }
       actions.resetForm();
     } catch (error) {
       console.error(error);
-      // Handle error, maybe show an error message
     }
   };
 

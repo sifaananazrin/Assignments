@@ -1,10 +1,8 @@
-// routes/surveyRoutes.js
-
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { validateSurvey } = require('../Middleware/validationMiddleware');
-const surveyController = require('../controllers/surveyController');
+const { validateSurvey } = require("../Middleware/validationMiddleware");
+const surveyController = require("../controllers/surveyController");
 
-router.post('/submit-survey', validateSurvey, surveyController.submitSurvey);
+router.post("/submit-survey", validateSurvey, surveyController.submitSurvey);
 
 module.exports = router;
