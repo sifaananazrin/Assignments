@@ -9,7 +9,7 @@ To get started with this project, follow these steps:
 1. Clone the project repository:
 
    ```
-   git clone <repository-url>
+   git clone https://github.com/sifaananazrin/Assignments
    ```
 
 2. Navigate to the server directory:
